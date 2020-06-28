@@ -44,14 +44,14 @@ module.exports = (toolbox: GluegunToolbox) => {
           await template.generate({
             template: 'componentRN.ts.ejs',
             target: `src/${folder}/${name}/index.tsx`,
-            props: { name: name }
+            props: { name }
           })
         }
       } else {
         await template.generate({
           template: 'component.ts.ejs',
           target: `src/${folder}/${name}/index.tsx`,
-          props: { name: name }
+          props: { name }
         })
         await template.generate({
           template: 'styles.ts.ejs',
