@@ -1,0 +1,10 @@
+import { resolve } from 'path'
+
+module.exports = {
+  client: 'pg',
+  connection: process.env.DB_URL,
+  useNullAsDefault: true,
+  migrations: {
+    directory: resolve(__dirname, 'migrations'),
+  },
+}

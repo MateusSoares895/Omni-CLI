@@ -1,24 +1,13 @@
 {
-  "name": "omni-cli",
-  "version": "0.0.1",
+  "name": "the-omni-cli",
+  "version": "1.0.0",
   "description": "omni CLI",
-  "private": true,
   "types": "build/types/types.d.ts",
   "bin": {
     "omni": "bin/omni"
   },
   "scripts": {
-    "format": "prettier --write **/*.{js,ts,tsx,json}",
-    "lint": "tslint -p .",
-    "clean-build": "rm -rf ./build",
-    "compile": "tsc -p .",
-    "copy-templates": "if [ -e ./src/templates ]; then cp -a ./src/templates ./build/; fi",
-    "build": "yarn format && yarn lint && yarn clean-build && yarn compile && yarn copy-templates",
-    "prepublishOnly": "yarn build",
-    "test": "jest",
-    "watch": "jest --watch",
-    "snapupdate": "jest --updateSnapshot",
-    "coverage": "jest --coverage"
+    "copy-templates": "if [ -e ./src/templates ]; then cp -a ./src/templates ./build/; fi"
   },
   "files": [
     "tsconfig.json",
