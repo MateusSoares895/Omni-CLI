@@ -1,12 +1,13 @@
 {
   "name": "the-omni-cli",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "omni CLI",
   "types": "build/types/types.d.ts",
   "bin": {
     "omni": "bin/omni"
   },
   "scripts": {
+    "prepublishOnly": "yarn tsc && yarn copy-templates",
     "copy-templates": "if [ -e ./src/templates ]; then cp -a ./src/templates ./build/; fi"
   },
   "files": [

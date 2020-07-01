@@ -143,7 +143,9 @@ module.exports = {
     success('To run:')
     success(`cd ${parameters.first}`)
     success(`${yarn ? 'yarn' : 'npx'} ts-node-dev src/index.ts`)
-    success('To run migrations:')
-    success(`${yarn ? 'yarn' : 'npx'} knex --knexfile src/database/knexfile.ts migrate:lastest`)
+    if (configMigrations) {
+      success('To run migrations:')
+      success(`${yarn ? 'yarn' : 'npx'} knex --knexfile src/database/knexfile.ts migrate:lastest`)
+    }
   }
 }
