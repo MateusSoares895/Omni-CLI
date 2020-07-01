@@ -1,29 +1,24 @@
 {
   "name": "the-omni-cli",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "omni CLI",
-  "types": "build/types/types.d.ts",
+  "types": "dist/types/types.d.ts",
   "bin": {
     "omni": "bin/omni"
   },
   "scripts": {
-    "prepublishOnly": "yarn tsc && yarn copy-templates",
-    "copy-templates": "if [ -e ./src/templates ]; then cp -a ./src/templates ./build/; fi"
+    "prepublishOnly": "babel src --extensions \".ts\" --out-dir dist --copy-files"
   },
-  "files": [
-    "tsconfig.json",
-    "tslint.json",
-    "build",
-    "LICENSE",
-    "readme.md",
-    "docs",
-    "bin"
-  ],
   "license": "MIT",
   "dependencies": {
     "gluegun": "^4.3.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/jest": "^24.0.18",
     "@types/node": "^14.0.14",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
