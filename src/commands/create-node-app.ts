@@ -34,8 +34,7 @@ module.exports = {
       postgresUrl = (await ask({
         type: 'input',
         name: 'postgres_url',
-        message: 'What is Your Postgres Url ?',
-        choices: ['Yes', 'No']
+        message: 'What is Your Postgres Url ?'
       })).postgres_url
       configMigrations = (await ask({
         type: 'select',
